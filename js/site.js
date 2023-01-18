@@ -7,7 +7,6 @@ function getValues() {
     buzzValue = parseInt(buzzValue);
     stopValue = parseInt(stopValue);
 
-
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue) && Number.isInteger(stopValue)) {
         let numbersArray = generateNumbers(1, stopValue);
         displayNumbers(numbersArray, fizzValue, buzzValue);
@@ -41,14 +40,12 @@ function displayNumbers(numbersArray, fizzValue, buzzValue) {
             value = 'FizzBuzz';
         }
         if (value % buzzValue == 0) {
-            value = 'buzz';
+            value = 'Buzz';
         }
         if (value % fizzValue == 0) {
-            value = 'fizz';
+            value = 'Fizz';
         }
-        
         let tableRow = `<td class="${text}">${value}</td>`;
-
         tableHtml = tableHtml + tableRow;
     }
     tableBody.innerHTML = tableHtml
