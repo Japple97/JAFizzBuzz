@@ -11,15 +11,12 @@ function getValues() {
         let numbersArray = generateNumbers(1, stopValue);
         displayNumbers(numbersArray, fizzValue, buzzValue);
     } else {
-        Swal.fire(
-            {
+        Swal.fire({
                 icon: 'error',
                 title: 'Oops!',
                 text: 'Only integers are allowed for FizzBuzz!'
-            }
-        );
-    }
-
+            });
+    } 
 }
 
 function generateNumbers(start, end) {
@@ -36,7 +33,7 @@ function displayNumbers(numbersArray, fizzValue, buzzValue) {
     for (let index = 0; index < numbersArray.length; index++) {
         let value = numbersArray[index];
         let text = '';
-        if (value % 15 == 0) {
+        if (value % (fizzValue*buzzValue) == 0) {
             value = 'FizzBuzz';
         }
         if (value % buzzValue == 0) {
@@ -45,8 +42,17 @@ function displayNumbers(numbersArray, fizzValue, buzzValue) {
         if (value % fizzValue == 0) {
             value = 'Fizz';
         }
+
+        if (index % 15 ==0) {
+            tableHtml += '<tr>';
+        }
+
         let tableRow = `<td class="${text}">${value}</td>`;
         tableHtml = tableHtml + tableRow;
+
+        if((index + 1) % 15 == 0){
+            tableHtml += '</tr>';
+        }
     }
     tableBody.innerHTML = tableHtml
 }
