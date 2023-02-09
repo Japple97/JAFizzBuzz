@@ -121,8 +121,34 @@
             </div>
             <!--Code Description-->
             <div class="col-12 col-lg-4">
-                <p>The code is structured in three functions.</p>
-                <p>This function displays the array of numbers based on a stop value. It does not accept anything other than integers as the input.</p>
+                <p>The code contains three functions: getValues(), generateNumbers(), and displayNumbers().</p>
+                <p>getValues() is the main function that retrieves values from three HTML elements with the ids
+                    fizzValue, buzzValue, and
+                    stopValue. The values are then converted to integers using the parseInt() function and checked to
+                    ensure that they are
+                    all integers using the Number.isInteger() function. If the values are integers, the function calls
+                    the generateNumbers()
+                    function and passes the start value (1) and the stop value (retrieved from the input element) as
+                    arguments. The
+                    generateNumbers() function returns an array of numbers between the start and stop values. Finally,
+                    the displayNumbers()
+                    function is called and passed the array of numbers, and the fizz and buzz values.</p>
+                <p>generateNumbers() takes two arguments, a start value and an end value, and creates an array of
+                    numbers between the two
+                    values using a for loop.</p>
+                <p>displayNumbers() takes an array of numbers, a fizz value, and a buzz value as arguments. The function
+                    first retrieves
+                    the HTML table body with an id of "results" and initializes an empty string tableHtml to hold the
+                    HTML for the table.
+                    The function then loops over the numbers array and performs the FizzBuzz calculation. If the value
+                    is divisible by both
+                    the fizz value and the buzz value, the value is set to "FizzBuzz". If the value is divisible by the
+                    buzz value, it is
+                    set to "Buzz". If the value is divisible by the fizz value, it is set to "Fizz". The result of the
+                    calculation is then
+                    added to tableHtml in the form of a table row. The table rows are grouped in sets of 15 and are
+                    added to tableHtml as
+                    table cells. Finally, the innerHTML of the table body is set to the value of tableHtml.</p>
             </div>
         </div>
     </main>
